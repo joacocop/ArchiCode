@@ -29,35 +29,35 @@ function badgeClass(tipo: TipoComponente): string {
 
 export function renderShell(): string {
   return `
-    <div class="min-h-screen">
-      <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-10">
+    <div class="min-h-screen bg-gray-900">
+      <header class="border-b border-orange-900 bg-gray-950/90 backdrop-blur-md sticky top-0 z-10">
         <div class="mx-auto max-w-6xl px-4 py-4 sm:px-6 flex flex-wrap items-center justify-between gap-3">
           <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-sky-400 to-indigo-500 font-bold text-slate-950">AC</div>
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-orange-400 to-orange-700 font-bold text-gray-900">AC</div>
             <div>
-              <h1 class="text-xl font-bold tracking-tight">ArchiCode</h1>
-              <p class="text-xs text-slate-400">Validador de arquitectura de software</p>
+              <h1 class="text-xl font-bold tracking-tight text-orange-300">ArchiCode</h1>
+              <p class="text-xs text-gray-400">Validador de arquitectura de software</p>
             </div>
           </div>
-          <div id="estado-global" class="text-sm"></div>
+          <div id="estado-global" class="text-sm text-orange-300"></div>
         </div>
       </header>
 
           <main class="mx-auto max-w-6xl px-2 py-4 sm:px-4 sm:py-8">
             <div class="grid gap-6 grid-cols-1">
               <section class="space-y-6">
-                <div class="card p-4 sm:p-6 animate-in">
-                  <h2 class="text-base sm:text-lg font-semibold mb-2">Nuevo componente</h2>
-                  <p class="text-xs sm:text-sm text-slate-400 mb-4 sm:mb-5">Tipado fuerte + validación Zod en tiempo real</p>
+                <div class="rounded-xl border border-gray-800 bg-gray-800/80 p-4 sm:p-6 animate-in">
+                  <h2 class="text-base sm:text-lg font-semibold mb-2 text-orange-300">Nuevo componente</h2>
+                  <p class="text-xs sm:text-sm text-orange-200 mb-4 sm:mb-5">Tipado fuerte + validación Zod en tiempo real</p>
                   <form id="form-componente" class="space-y-4 sm:space-y-5" novalidate>
                     <div>
-                      <label class="block text-xs sm:text-sm font-medium text-slate-300 mb-1" for="nombre">Nombre</label>
-                      <input class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px]" id="nombre" name="nombre" type="text" placeholder="ej. AuthService" required />
+                      <label class="block text-xs sm:text-sm font-medium text-orange-200 mb-1" for="nombre">Nombre</label>
+                      <input class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px] bg-gray-900 border border-orange-700 text-orange-100 placeholder:text-gray-500 focus:border-orange-400" id="nombre" name="nombre" type="text" placeholder="ej. AuthService" required />
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>
-                        <label class="block text-xs sm:text-sm font-medium text-slate-300 mb-1" for="tipo">Tipo</label>
-                        <select class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px]" id="tipo" name="tipo">
+                        <label class="block text-xs sm:text-sm font-medium text-orange-200 mb-1" for="tipo">Tipo</label>
+                        <select class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px] bg-gray-900 border border-orange-700 text-orange-100 focus:border-orange-400" id="tipo" name="tipo">
                           <option value="servicio">Servicio</option>
                           <option value="api">API</option>
                           <option value="base-datos">Base de datos</option>
@@ -65,8 +65,8 @@ export function renderShell(): string {
                         </select>
                       </div>
                       <div>
-                        <label class="block text-xs sm:text-sm font-medium text-slate-300 mb-1" for="patron">Patrón</label>
-                        <select class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px]" id="patron" name="patron">
+                        <label class="block text-xs sm:text-sm font-medium text-orange-200 mb-1" for="patron">Patrón</label>
+                        <select class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px] bg-gray-900 border border-orange-700 text-orange-100 focus:border-orange-400" id="patron" name="patron">
                           <option value="hexagonal">Hexagonal</option>
                           <option value="mvc">MVC</option>
                           <option value="microservicio">Microservicio</option>
@@ -74,28 +74,28 @@ export function renderShell(): string {
                       </div>
                     </div>
                     <div>
-                      <label class="block text-xs sm:text-sm font-medium text-slate-300 mb-1" for="descripcion">Descripción (opcional)</label>
-                      <textarea class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px] resize-none" id="descripcion" name="descripcion" rows="2" placeholder="Responsabilidad del componente"></textarea>
+                      <label class="block text-xs sm:text-sm font-medium text-orange-200 mb-1" for="descripcion">Descripción (opcional)</label>
+                      <textarea class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px] resize-none bg-gray-900 border border-orange-700 text-orange-100 placeholder:text-gray-500 focus:border-orange-400" id="descripcion" name="descripcion" rows="2" placeholder="Responsabilidad del componente"></textarea>
                     </div>
                     <div>
-                      <label class="block text-xs sm:text-sm font-medium text-slate-300 mb-1">Dependencias</label>
-                      <div id="deps-checkboxes" class="max-h-24 sm:max-h-36 overflow-y-auto rounded-lg border border-slate-700 bg-slate-800/50 p-2 sm:p-3 space-y-2 text-xs sm:text-sm text-slate-400">
-                        <p class="text-slate-500 italic">Agregá componentes para poder enlazarlos</p>
+                      <label class="block text-xs sm:text-sm font-medium text-orange-200 mb-1">Dependencias</label>
+                      <div id="deps-checkboxes" class="max-h-24 sm:max-h-36 overflow-y-auto rounded-lg border border-orange-800 bg-gray-900/70 p-2 sm:p-3 space-y-2 text-xs sm:text-sm text-orange-200">
+                        <p class="text-gray-500 italic">Agregá componentes para poder enlazarlos</p>
                       </div>
                     </div>
                     <div id="errores-form" class="hidden rounded-lg border border-red-500/40 bg-red-500/10 p-2 sm:p-3 text-xs sm:text-sm text-red-300"></div>
                     <div id="preview-validacion" class="hidden rounded-lg border p-2 sm:p-3 text-xs sm:text-sm"></div>
-                    <button type="submit" class="btn-primary w-full text-sm sm:text-base py-2 sm:py-3 min-h-[40px]">Agregar componente</button>
+                    <button type="submit" class="w-full text-sm sm:text-base py-2 sm:py-3 min-h-[40px] rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-semibold transition">Agregar componente</button>
                   </form>
                 </div>
               </section>
 
               <section class="space-y-6 sm:space-y-8">
-                <div id="panel-validacion" class="card p-4 sm:p-6 animate-in"></div>
-                <div class="card p-4 sm:p-6 animate-in">
+                <div id="panel-validacion" class="rounded-xl border border-gray-800 bg-gray-800/80 p-4 sm:p-6 animate-in"></div>
+                <div class="rounded-xl border border-gray-800 bg-gray-800/80 p-4 sm:p-6 animate-in">
                   <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 gap-1 sm:gap-0">
-                    <h2 class="text-base sm:text-lg font-semibold">Componentes</h2>
-                    <span id="contador" class="text-xs sm:text-sm text-slate-400">0 registrados</span>
+                    <h2 class="text-base sm:text-lg font-semibold text-orange-300">Componentes</h2>
+                    <span id="contador" class="text-xs sm:text-sm text-orange-200">0 registrados</span>
                   </div>
                   <div id="lista-componentes" class="space-y-2 sm:space-y-3"></div>
                 </div>
@@ -103,7 +103,7 @@ export function renderShell(): string {
             </div>
           </main>
 
-      <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+      <footer class="border-t border-orange-900 py-6 text-center text-xs text-orange-200 bg-gray-950">
         ArchiCode · TypeScript + Zod + Arquitectura Hexagonal · Persistencia localStorage
       </footer>
     </div>
