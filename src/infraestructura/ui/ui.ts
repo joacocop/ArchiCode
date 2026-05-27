@@ -44,8 +44,8 @@ export function renderShell(): string {
       </header>
 
       <main class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-        <div class="grid gap-8 lg:grid-cols-5">
-          <section class="lg:col-span-2 space-y-6">
+        <div class="grid gap-8 grid-cols-1">
+          <section class="space-y-6">
             <div class="card p-6 animate-in">
               <h2 class="text-lg font-semibold mb-1">Nuevo componente</h2>
               <p class="text-sm text-slate-400 mb-5">Tipado fuerte + validación Zod en tiempo real</p>
@@ -62,7 +62,6 @@ export function renderShell(): string {
                       <option value="api">API</option>
                       <option value="base-datos">Base de datos</option>
                       <option value="ui">UI</option>
-                      <option value="cola">Cola</option>
                     </select>
                   </div>
                   <div>
@@ -71,7 +70,6 @@ export function renderShell(): string {
                       <option value="hexagonal">Hexagonal</option>
                       <option value="mvc">MVC</option>
                       <option value="microservicio">Microservicio</option>
-                      <option value="monolito">Monolito</option>
                     </select>
                   </div>
                 </div>
@@ -92,7 +90,7 @@ export function renderShell(): string {
             </div>
           </section>
 
-          <section class="lg:col-span-3 space-y-6">
+          <section class="space-y-6">
             <div id="panel-validacion" class="card p-6 animate-in"></div>
             <div class="card p-6 animate-in">
               <div class="flex items-center justify-between mb-4">
