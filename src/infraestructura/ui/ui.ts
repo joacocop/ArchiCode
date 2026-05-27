@@ -43,65 +43,65 @@ export function renderShell(): string {
         </div>
       </header>
 
-      <main class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-        <div class="grid gap-8 grid-cols-1">
-          <section class="space-y-6">
-            <div class="card p-6 animate-in">
-              <h2 class="text-lg font-semibold mb-1">Nuevo componente</h2>
-              <p class="text-sm text-slate-400 mb-5">Tipado fuerte + validación Zod en tiempo real</p>
-              <form id="form-componente" class="space-y-4" novalidate>
-                <div>
-                  <label class="block text-sm font-medium text-slate-300 mb-1" for="nombre">Nombre</label>
-                  <input class="input-field" id="nombre" name="nombre" type="text" placeholder="ej. AuthService" required />
+          <main class="mx-auto max-w-6xl px-2 py-4 sm:px-4 sm:py-8">
+            <div class="grid gap-6 grid-cols-1">
+              <section class="space-y-6">
+                <div class="card p-4 sm:p-6 animate-in">
+                  <h2 class="text-base sm:text-lg font-semibold mb-2">Nuevo componente</h2>
+                  <p class="text-xs sm:text-sm text-slate-400 mb-4 sm:mb-5">Tipado fuerte + validación Zod en tiempo real</p>
+                  <form id="form-componente" class="space-y-4 sm:space-y-5" novalidate>
+                    <div>
+                      <label class="block text-xs sm:text-sm font-medium text-slate-300 mb-1" for="nombre">Nombre</label>
+                      <input class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px]" id="nombre" name="nombre" type="text" placeholder="ej. AuthService" required />
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label class="block text-xs sm:text-sm font-medium text-slate-300 mb-1" for="tipo">Tipo</label>
+                        <select class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px]" id="tipo" name="tipo">
+                          <option value="servicio">Servicio</option>
+                          <option value="api">API</option>
+                          <option value="base-datos">Base de datos</option>
+                          <option value="ui">UI</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label class="block text-xs sm:text-sm font-medium text-slate-300 mb-1" for="patron">Patrón</label>
+                        <select class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px]" id="patron" name="patron">
+                          <option value="hexagonal">Hexagonal</option>
+                          <option value="mvc">MVC</option>
+                          <option value="microservicio">Microservicio</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div>
+                      <label class="block text-xs sm:text-sm font-medium text-slate-300 mb-1" for="descripcion">Descripción (opcional)</label>
+                      <textarea class="input-field text-sm sm:text-base py-2 sm:py-3 min-h-[40px] resize-none" id="descripcion" name="descripcion" rows="2" placeholder="Responsabilidad del componente"></textarea>
+                    </div>
+                    <div>
+                      <label class="block text-xs sm:text-sm font-medium text-slate-300 mb-1">Dependencias</label>
+                      <div id="deps-checkboxes" class="max-h-24 sm:max-h-36 overflow-y-auto rounded-lg border border-slate-700 bg-slate-800/50 p-2 sm:p-3 space-y-2 text-xs sm:text-sm text-slate-400">
+                        <p class="text-slate-500 italic">Agregá componentes para poder enlazarlos</p>
+                      </div>
+                    </div>
+                    <div id="errores-form" class="hidden rounded-lg border border-red-500/40 bg-red-500/10 p-2 sm:p-3 text-xs sm:text-sm text-red-300"></div>
+                    <div id="preview-validacion" class="hidden rounded-lg border p-2 sm:p-3 text-xs sm:text-sm"></div>
+                    <button type="submit" class="btn-primary w-full text-sm sm:text-base py-2 sm:py-3 min-h-[40px]">Agregar componente</button>
+                  </form>
                 </div>
-                <div class="grid grid-cols-2 gap-3">
-                  <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1" for="tipo">Tipo</label>
-                    <select class="input-field" id="tipo" name="tipo">
-                      <option value="servicio">Servicio</option>
-                      <option value="api">API</option>
-                      <option value="base-datos">Base de datos</option>
-                      <option value="ui">UI</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1" for="patron">Patrón</label>
-                    <select class="input-field" id="patron" name="patron">
-                      <option value="hexagonal">Hexagonal</option>
-                      <option value="mvc">MVC</option>
-                      <option value="microservicio">Microservicio</option>
-                    </select>
-                  </div>
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-slate-300 mb-1" for="descripcion">Descripción (opcional)</label>
-                  <textarea class="input-field resize-none" id="descripcion" name="descripcion" rows="2" placeholder="Responsabilidad del componente"></textarea>
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-slate-300 mb-1">Dependencias</label>
-                  <div id="deps-checkboxes" class="max-h-36 overflow-y-auto rounded-lg border border-slate-700 bg-slate-800/50 p-3 space-y-2 text-sm text-slate-400">
-                    <p class="text-slate-500 italic">Agregá componentes para poder enlazarlos</p>
-                  </div>
-                </div>
-                <div id="errores-form" class="hidden rounded-lg border border-red-500/40 bg-red-500/10 p-3 text-sm text-red-300"></div>
-                <div id="preview-validacion" class="hidden rounded-lg border p-3 text-sm"></div>
-                <button type="submit" class="btn-primary w-full">Agregar componente</button>
-              </form>
-            </div>
-          </section>
+              </section>
 
-          <section class="space-y-6">
-            <div id="panel-validacion" class="card p-6 animate-in"></div>
-            <div class="card p-6 animate-in">
-              <div class="flex items-center justify-between mb-4">
-                <h2 class="text-lg font-semibold">Componentes</h2>
-                <span id="contador" class="text-sm text-slate-400">0 registrados</span>
-              </div>
-              <div id="lista-componentes" class="space-y-3"></div>
+              <section class="space-y-6 sm:space-y-8">
+                <div id="panel-validacion" class="card p-4 sm:p-6 animate-in"></div>
+                <div class="card p-4 sm:p-6 animate-in">
+                  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 gap-1 sm:gap-0">
+                    <h2 class="text-base sm:text-lg font-semibold">Componentes</h2>
+                    <span id="contador" class="text-xs sm:text-sm text-slate-400">0 registrados</span>
+                  </div>
+                  <div id="lista-componentes" class="space-y-2 sm:space-y-3"></div>
+                </div>
+              </section>
             </div>
-          </section>
-        </div>
-      </main>
+          </main>
 
       <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
         ArchiCode · TypeScript + Zod + Arquitectura Hexagonal · Persistencia localStorage
